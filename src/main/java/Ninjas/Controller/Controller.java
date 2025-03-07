@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeNinjas;
+package Ninjas.Controller;
 
 import org.springframework.web.bind.annotation.*;
 

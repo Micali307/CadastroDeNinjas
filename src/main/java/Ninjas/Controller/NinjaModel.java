@@ -1,21 +1,30 @@
-package dev.java10x.CadastroDeNinjas;
+package Ninjas.Controller;
 
 
+import Missoes.MissoesModel;
 import jakarta.persistence.*;
+import java.util.List;
 
-/*Entity transforma uma classe em entidade do banco de dados
+//Entity transforma uma classe em entidade do banco de dados
 
- */
 @Entity
 @Table(name = "tb_cadastro")
 public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
+
+//    @ManyToOne - Um ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Chave estrangeira - "Foreing Key"
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
