@@ -10,7 +10,4 @@ public class NinjaController {
     public String boasVindas() {
         return "Essa é a minha primeira mensagem nessa rota";
     }
-
-
-
 }
