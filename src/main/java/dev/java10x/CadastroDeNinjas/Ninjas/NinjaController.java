@@ -1,6 +1,5 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -31,9 +30,9 @@ public class NinjaController {
     }
 
 //    Mostrar ninja por id (READ)
-    @GetMapping ("/listarID")
-    public String mostrarTodosOsNinjasPorID () {
-        return "Mostrar ninja por ID";
+    @GetMapping ("/listar/{id}")
+    public NinjaModel listarNinjasPorID (@PathVariable Long id) {
+        return ninjaService.listarNinjasPorID(id);
     }
 
 //    Alterar dados dos ninjas (UPDATE)
