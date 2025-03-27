@@ -33,9 +33,14 @@ public class NinjaService {
         ninjaRepository.deleteById(id);
     }
 
-//    Alterar um ninja
-//    public NinjaModel alterarNinjaPorId(Long id) {
-//
-//    }
+//    Atualizar ninja
+    public NinjaModel atualizarNinja(Long id, NinjaModel ninjaAtualizado) {
+        if (ninjaRepository.existsById(id)) {
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        return null;
+    }
+
 
 }
